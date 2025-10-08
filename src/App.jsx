@@ -49,7 +49,7 @@ const App = () => {
   //API
   const autocomplete = "https://api.weatherapi.com/v1/search.json?key=83c0b17cb2774eac95723527231501&q=";
   //Weather API
-  const weatherURL = (city) => `http://api.weatherapi.com/v1/forecast.json?key=83c0b17cb2774eac95723527231501&q=${city}&days=7&api=no&alerts=no`
+  const weatherURL = (city) => `https://api.weatherapi.com/v1/forecast.json?key=83c0b17cb2774eac95723527231501&q=${city}&days=7&api=no&alerts=no`
 
   //-----------------------------------------------------------------------------------------------------
   //userWhenClick
