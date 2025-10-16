@@ -1,13 +1,12 @@
 import React from 'react';
 
-// ✅ SearchBar Component — allows users to search for cities, shows suggestions and recent searches
+// ✅ SearchBar Component — allows users to search for cities and shows suggestions
 const SearchBar = ({ 
   city,                // Current typed city in the input field
   setCity,             // Function to update typed city
-  selectedCity,        // City selected from suggestions or recent searches
+  selectedCity,        // City selected from suggestions
   citySuggestions,     // Array of suggested cities based on input
-  HandleSelectedCity,  // Function to handle when a suggestion or recent search is clicked
-  recentSearches,      // Array of recent searched cities
+  HandleSelectedCity,  // Function to handle when a suggestion is clicked
   ClearData            // Function to clear the current selection/input
 }) => {
   return (
@@ -61,23 +60,6 @@ const SearchBar = ({
         </div>
       )}
 
-      {/* Recent Searches (shown only if no city is typed or selected) */}
-      {recentSearches.length > 0 && !city && !selectedCity && (
-        <div className="recent-searches mt-3">
-          <small className="text-muted fw-bold">Recent Searches:</small>
-          <div className="d-flex flex-wrap gap-2 mt-2">
-            {recentSearches.map((search, idx) => (
-              <button
-                key={idx}
-                className="btn btn-sm btn-outline-primary"
-                onClick={() => HandleSelectedCity(search)} // Select recent search
-              >
-                {search.split(',')[0]} {/* Show only city name (before comma) */}
-              </button>
-            ))}
-          </div>
-        </div>
-      )}
     </div>
   );
 };
